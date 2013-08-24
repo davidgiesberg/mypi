@@ -1,4 +1,8 @@
-{ "run_list":
+{ "tmux": {
+    "install_method": "source",
+    "version": "1.8"
+  },
+  "run_list":
   [
     "recipe[tmux]"
   ]
