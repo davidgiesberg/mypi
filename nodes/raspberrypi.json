@@ -4,6 +4,7 @@
   },
   "run_list":
   [
-    "recipe[tmux]"
+    "recipe[tmux]",
+    "recipe[nginx]"
   ]
 }
