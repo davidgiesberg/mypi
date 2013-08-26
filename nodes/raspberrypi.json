@@ -2,9 +2,31 @@
     "install_method": "source",
     "version": "1.8"
   },
+  "nginx": {
+    "worker_processes": 1,
+    "default_site_enabled": false
+  },
+  "graphite":{
+    "timezone": "America/Chicago",
+    "web_server": "uwsgi",
+    "uwsgi":{
+      "listen_http": true,
+      "listen_port": "7999"
+    },
+    "storage_schemas":[
+      {
+        "name": "catchall",
+        "match-all": true,
+        "retentions": "1min:7d,5min:30d,10min:5y"
+      }
+    ]
+  },
   "run_list":
   [
     "recipe[tmux]",
-    "recipe[nginx]"
+    "recipe[nginx]",
+    "recipe[graphite]",
+    "recipe[gunicorn]",
+    "recipe[davidstweaks]"
   ]
 }
