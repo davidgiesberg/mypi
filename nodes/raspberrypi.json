@@ -21,6 +21,9 @@
       }
     ]
   },
+  "rbenv": {
+    "group_users": ["pi"]
+  },
   "run_list":
   [
     "recipe[tmux]",
